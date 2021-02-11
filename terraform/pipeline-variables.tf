@@ -51,8 +51,16 @@ resource "azuredevops_variable_group" "azure_defaults" {
     value      = var.location
   }
   variable {
-    name       = "DevOpsUrl"
-    value      = var.devops_url
+    name      = "TerraformStateRG"
+    value     = azurerm_resource_group.terraform_state.name
+  }
+  variable {
+    name      = "TerraformStateStorageAccount"
+    value     = azurerm_storage_account.terraform_state.name
+  }
+  variable {
+    name      = "TerraformStateContainer"
+    value     = azurerm_storage_container.terraform_state.name
   }
 }
 
