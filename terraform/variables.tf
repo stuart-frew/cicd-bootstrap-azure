@@ -75,3 +75,6 @@ variable "tags" {
 }
 
 
+variable "initialisation_repository_name" {
+  description = "The repository that has the pipeline for the creation of the repos and pipeline setup"
+}
